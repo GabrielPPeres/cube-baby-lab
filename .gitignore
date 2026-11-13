@@ -1,0 +1,45 @@
+# External repositories: documented dependencies, never vendored here.
+/Tonehub/
+/tonehub-app/
+
+# Proprietary vendor artifacts retained only in the local/offline backup.
+/phase3/artifacts/*
+!/phase3/artifacts/.gitignore
+/phase3/extracted/*
+!/phase3/extracted/.gitignore
+
+# Generated application output and dependency/cache directories.
+/lab/dist/
+**/node_modules/
+**/.pnpm-store/
+**/coverage/
+**/.cache/
+
+# REA/disassembler databases, snapshots and temporary exports.
+*.rea-snapshot
+*.gpr
+*.rep/
+*.idb
+*.i64
+
+# Local configuration, credentials and private keys.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+credentials*.json
+secrets*.json
+
+# Logs, temporary files and operating-system/editor metadata.
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

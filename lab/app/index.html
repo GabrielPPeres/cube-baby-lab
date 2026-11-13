@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cube Baby Bluetooth Research Lab</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">FASE 2 · OFFLINE</p>
+        <h1>Cube Baby <span>Research Lab</span></h1>
+      </div>
+      <div class="status" aria-label="Estado Bluetooth">
+        <span class="status-dot"></span>
+        Bluetooth desconectado
+      </div>
+    </header>
+
+    <main>
+      <section class="hero panel">
+        <div>
+          <p class="eyebrow">BANCO SIMULADO · 48 BYTES</p>
+          <h2>Presets A/B/C sem tocar no hardware</h2>
+          <p>Edite, inspecione e faça backup do banco capturado. A descoberta Bluetooth é somente passiva e simulada.</p>
+        </div>
+        <div class="hero-actions">
+          <button id="exportButton" class="primary">Exportar backup</button>
+          <label class="button secondary" for="importInput">Importar backup</label>
+          <input id="importInput" type="file" accept="application/json,.json" hidden />
+        </div>
+      </section>
+
+      <div class="workspace-grid">
+        <section class="panel editor-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">EDITOR</p>
+              <h2>Preset ativo</h2>
+            </div>
+            <div id="slotTabs" class="slot-tabs" role="tablist"></div>
+          </div>
+          <div id="parameterGrid" class="parameter-grid"></div>
+        </section>
+
+        <aside class="panel bluetooth-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">DESCOBERTA</p>
+              <h2>Bluetooth</h2>
+            </div>
+            <span class="safe-badge">sem writes</span>
+          </div>
+          <div class="transport-card">
+            <h3>Bluetooth Classic / SDP</h3>
+            <p>Inventário de dispositivos e serviços. Nenhum perfil da Cube Baby foi presumido.</p>
+            <output id="classicResult">Não executado</output>
+          </div>
+          <div class="transport-card">
+            <h3>BLE / GATT</h3>
+            <p>Serviços, characteristics e propriedades somente após enumeração read-only.</p>
+            <output id="bleResult">Não executado</output>
+          </div>
+          <button id="mockDiscoveryButton" class="secondary full">Executar descoberta mock vazia</button>
+          <p class="warning">A conexão e a transmissão permanecem bloqueadas até existir evidência física.</p>
+        </aside>
+      </div>
+
+      <section class="panel hex-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">MEMÓRIA</p>
+            <h2>Inspeção hexadecimal</h2>
+          </div>
+          <span>13 parâmetros + 3 bytes preservados por slot</span>
+        </div>
+        <div id="hexRows" class="hex-rows"></div>
+      </section>
+
+      <section class="panel log-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">AUDITORIA</p>
+            <h2>Log de operações e erros</h2>
+          </div>
+          <button id="clearLogButton" class="ghost">Limpar</button>
+        </div>
+        <div id="operationLog" class="operation-log" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer>Laboratório offline · nenhum comando Bluetooth ou USB é enviado</footer>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

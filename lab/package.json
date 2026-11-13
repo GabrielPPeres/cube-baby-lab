@@ -1,0 +1,11 @@
+{
+  "name": "cube-baby-protocol-lab",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "captures": "node --experimental-strip-types scripts/summarize-captures.ts",
+    "app:build": "node --experimental-strip-types scripts/build-app.ts",
+    "app:serve": "node --experimental-strip-types scripts/serve-app.ts"
+  }
+}

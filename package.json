@@ -1,0 +1,12 @@
+{
+  "name": "cube-baby-research",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "npm --prefix lab test && npm --prefix phase3 test",
+    "captures": "npm --prefix lab run captures",
+    "lab:build": "npm --prefix lab run app:build",
+    "phase3:inventory": "npm --prefix phase3 run inventory",
+    "bluetooth:passive": "npm --prefix phase3 run bluetooth:passive"
+  }
+}
